@@ -1,0 +1,59 @@
+﻿@model IEnumerable<AdvancedProgramming_Lesson1.Models.LiteraryGenres>
+
+@{
+    ViewData["Title"] = "Indeks";
+}
+
+<h1>Indeks</h1>
+
+<p>
+    <a asp-action="Create">Utwórz nowy</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GenreName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfOriginOfTheGenre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TheMainMotifsInTheGenre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PopularityOfTheGenre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TheNumberOfBooksInAGivenGenre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenreName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfOriginOfTheGenre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TheMainMotifsInTheGenre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PopularityOfTheGenre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TheNumberOfBooksInAGivenGenre)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edytuj</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Szczegóły</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Usuń</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

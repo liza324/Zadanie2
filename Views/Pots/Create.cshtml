@@ -1,0 +1,58 @@
+﻿@model AdvancedProgramming_Lesson1.Models.Pots
+
+@{
+    ViewData["Title"] = "Utwórz nowy rekord";
+}
+
+<h1>Utwórz</h1>
+
+<h4>Garnki</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacity" class="control-label"></label>
+                <input asp-for="Capacity" class="form-control" />
+                <span asp-validation-for="Capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Weight" class="control-label"></label>
+                <input asp-for="Weight" class="form-control" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LidType" class="control-label"></label>
+                <input asp-for="LidType" class="form-control" />
+                <span asp-validation-for="LidType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfHandles" class="control-label"></label>
+                <input asp-for="NumberOfHandles" class="form-control" />
+                <span asp-validation-for="NumberOfHandles" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Material" class="control-label"></label>
+                <input asp-for="Material" class="form-control" />
+                <span asp-validation-for="Material" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Utwórz" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Powrót do listy</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

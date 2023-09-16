@@ -1,0 +1,59 @@
+﻿@model AdvancedProgramming_Lesson1.Models.Alcohols
+
+@{
+    ViewData["Title"] = "Edycja";
+}
+
+<h1>Edycja rekordu</h1>
+
+<h4>Alkohole</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="TypeOfAlcohol" class="control-label"></label>
+                <input asp-for="TypeOfAlcohol" class="form-control" />
+                <span asp-validation-for="TypeOfAlcohol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Volume" class="control-label"></label>
+                <input asp-for="Volume" class="form-control" />
+                <span asp-validation-for="Volume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PercentageOfAlcoholContent" class="control-label"></label>
+                <input asp-for="PercentageOfAlcoholContent" class="form-control" />
+                <span asp-validation-for="PercentageOfAlcoholContent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AmountOfSugar" class="control-label"></label>
+                <input asp-for="AmountOfSugar" class="form-control" />
+                <span asp-validation-for="AmountOfSugar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YearOfManufacture" class="control-label"></label>
+                <input asp-for="YearOfManufacture" class="form-control" />
+                <span asp-validation-for="YearOfManufacture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">powrót do listy</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

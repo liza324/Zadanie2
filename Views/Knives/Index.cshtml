@@ -1,0 +1,65 @@
+﻿@model IEnumerable<AdvancedProgramming_Lesson1.Models.Knives>
+
+@{
+    ViewData["Title"] = "Indeks";
+}
+
+<h1>Indeks</h1>
+
+<p>
+    <a asp-action="Create">Utwórz nowy</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BladeLength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BladeType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HandleMaterial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DegreeOfSeverity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BladeLength)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BladeType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HandleMaterial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DegreeOfSeverity)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edytuj</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Szczegóły</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Usuń</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
